@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F62BF0A1C629ADC00DDD296 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F62BF091C629ADC00DDD296 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		7FB1BD071C6258B800D63762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD061C6258B800D63762 /* main.m */; };
 		7FB1BD0A1C6258B800D63762 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD091C6258B800D63762 /* AppDelegate.m */; };
 		7FB1BD0D1C6258B800D63762 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD0C1C6258B800D63762 /* HomeViewController.m */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F62BF091C629ADC00DDD296 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7FB1BD021C6258B800D63762 /* SportsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB1BD061C6258B800D63762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7FB1BD081C6258B800D63762 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F62BF0A1C629ADC00DDD296 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +54,7 @@
 		7FB1BCF91C6258B800D63762 = {
 			isa = PBXGroup;
 			children = (
+				7F62BF091C629ADC00DDD296 /* CoreData.framework */,
 				7FB1BD041C6258B800D63762 /* SportsTracker */,
 				7FB1BD031C6258B800D63762 /* Products */,
 			);
@@ -324,6 +328,7 @@
 				7FB1BD1E1C6258B800D63762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
