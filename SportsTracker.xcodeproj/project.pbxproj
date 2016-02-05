@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5919B3235667BE037ACE3EB7 /* libPods-SportsTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2228B1377037F54C354C3BB /* libPods-SportsTracker.a */; };
 		7F62BF331C62A72000DDD296 /* SportsTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F62BF311C62A72000DDD296 /* SportsTracker.xcdatamodeld */; };
+		7FA45D891C648621009106BC /* profile-rabbit-toy.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45D881C648621009106BC /* profile-rabbit-toy.png */; };
 		7FB1BD071C6258B800D63762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD061C6258B800D63762 /* main.m */; };
 		7FB1BD0A1C6258B800D63762 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD091C6258B800D63762 /* AppDelegate.m */; };
 		7FB1BD0D1C6258B800D63762 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD0C1C6258B800D63762 /* HomeViewController.m */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		6C86069D6DC1F94FDBD1E83B /* Pods-SportsTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsTracker/Pods-SportsTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		7F62BF321C62A72000DDD296 /* SportsTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsTracker.xcdatamodel; sourceTree = "<group>"; };
+		7FA45D881C648621009106BC /* profile-rabbit-toy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-rabbit-toy.png"; sourceTree = "<group>"; };
 		7FB1BD021C6258B800D63762 /* SportsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB1BD061C6258B800D63762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7FB1BD081C6258B800D63762 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7FA45D871C6485FB009106BC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7FA45D881C648621009106BC /* profile-rabbit-toy.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		7FB1BCF91C6258B800D63762 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 		7FB1BD041C6258B800D63762 /* SportsTracker */ = {
 			isa = PBXGroup;
 			children = (
+				7FA45D871C6485FB009106BC /* Images */,
 				7FB1BD221C62660B00D63762 /* ViewControllers */,
 				7FB1BD081C6258B800D63762 /* AppDelegate.h */,
 				7FB1BD091C6258B800D63762 /* AppDelegate.m */,
@@ -189,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA45D891C648621009106BC /* profile-rabbit-toy.png in Resources */,
 				7FB1BD181C6258B800D63762 /* LaunchScreen.storyboard in Resources */,
 				7FB1BD151C6258B800D63762 /* Assets.xcassets in Resources */,
 				7FB1BD131C6258B800D63762 /* Main.storyboard in Resources */,
