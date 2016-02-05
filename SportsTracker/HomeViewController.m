@@ -18,23 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.profileImageView.layer.cornerRadius = 15.0f;
-
-    //self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
-    self.profileImageView.clipsToBounds = YES;
     
-    self.profileImageView.layer.borderWidth = 3.0f;
-    self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-    NSLog(@"check and create database doing");
+    NSLog(@"check and create database");
+ 
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsPath = [paths objectAtIndex:0];
-    NSString *path = [docsPath stringByAppendingPathComponent:@"test.db"];
-    NSString *createTableUser = @"create table user(name text primary key, age int)";
-    
+    NSString *path = [docsPath stringByAppendingPathComponent:@"SportsTracker.db"];
+    NSString *createTableUser = @"CREATE TABLE users(id INT PRIMARY KEY, password TEXT, name TEXT, firstName TEXT, lastName TEXT,  email TEXT, age INT, isLogged INT)";
+    NSLog(@"%@",path);
     FMDatabase *db = [FMDatabase databaseWithPath:path];
     if (![db open]) {
-       
+     
         return;
     }
     else{
@@ -44,8 +39,12 @@
         if (selectResult == nil) {
             [db executeUpdate:createTableUser];
         }
-        
     }
+    
+    self.profileImageView.layer.cornerRadius = 15.0f;
+    self.profileImageView.clipsToBounds = YES;
+    self.profileImageView.layer.borderWidth = 3.0f;
+    self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 - (void)didReceiveMemoryWarning {
