@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5919B3235667BE037ACE3EB7 /* libPods-SportsTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2228B1377037F54C354C3BB /* libPods-SportsTracker.a */; };
-		7F62BF331C62A72000DDD296 /* SportsTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F62BF311C62A72000DDD296 /* SportsTracker.xcdatamodeld */; };
 		7FA45D891C648621009106BC /* profile-rabbit-toy.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45D881C648621009106BC /* profile-rabbit-toy.png */; };
 		7FA45D8C1C64A33A009106BC /* MainSingUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45D8B1C64A33A009106BC /* MainSingUpViewController.m */; };
+		7FA45D8E1C64E593009106BC /* amazing_running.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45D8D1C64E593009106BC /* amazing_running.jpg */; };
+		7FA45D921C64E744009106BC /* Country_Road_tall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45D911C64E744009106BC /* Country_Road_tall.jpg */; };
 		7FB1BD071C6258B800D63762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD061C6258B800D63762 /* main.m */; };
 		7FB1BD0A1C6258B800D63762 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD091C6258B800D63762 /* AppDelegate.m */; };
 		7FB1BD0D1C6258B800D63762 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD0C1C6258B800D63762 /* HomeViewController.m */; };
@@ -24,10 +25,11 @@
 
 /* Begin PBXFileReference section */
 		6C86069D6DC1F94FDBD1E83B /* Pods-SportsTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsTracker/Pods-SportsTracker.debug.xcconfig"; sourceTree = "<group>"; };
-		7F62BF321C62A72000DDD296 /* SportsTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsTracker.xcdatamodel; sourceTree = "<group>"; };
 		7FA45D881C648621009106BC /* profile-rabbit-toy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-rabbit-toy.png"; sourceTree = "<group>"; };
 		7FA45D8A1C64A33A009106BC /* MainSingUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSingUpViewController.h; sourceTree = "<group>"; };
 		7FA45D8B1C64A33A009106BC /* MainSingUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSingUpViewController.m; sourceTree = "<group>"; };
+		7FA45D8D1C64E593009106BC /* amazing_running.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amazing_running.jpg; sourceTree = "<group>"; };
+		7FA45D911C64E744009106BC /* Country_Road_tall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Country_Road_tall.jpg; sourceTree = "<group>"; };
 		7FB1BD021C6258B800D63762 /* SportsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB1BD061C6258B800D63762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7FB1BD081C6258B800D63762 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,9 +82,18 @@
 		7FA45D871C6485FB009106BC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7FA45D911C64E744009106BC /* Country_Road_tall.jpg */,
+				7FA45D8D1C64E593009106BC /* amazing_running.jpg */,
 				7FA45D881C648621009106BC /* profile-rabbit-toy.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		7FA45D931C64EADC009106BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		7FB1BCF91C6258B800D63762 = {
@@ -106,6 +117,7 @@
 		7FB1BD041C6258B800D63762 /* SportsTracker */ = {
 			isa = PBXGroup;
 			children = (
+				7FA45D931C64EADC009106BC /* Views */,
 				7FA45D871C6485FB009106BC /* Images */,
 				7FB1BD221C62660B00D63762 /* ViewControllers */,
 				7FB1BD081C6258B800D63762 /* AppDelegate.h */,
@@ -114,7 +126,6 @@
 				7FB1BD141C6258B800D63762 /* Assets.xcassets */,
 				7FB1BD161C6258B800D63762 /* LaunchScreen.storyboard */,
 				7FB1BD191C6258B800D63762 /* Info.plist */,
-				7F62BF311C62A72000DDD296 /* SportsTracker.xcdatamodeld */,
 				7FB1BD051C6258B800D63762 /* Supporting Files */,
 			);
 			path = SportsTracker;
@@ -208,7 +219,9 @@
 				7FA45D891C648621009106BC /* profile-rabbit-toy.png in Resources */,
 				7FB1BD181C6258B800D63762 /* LaunchScreen.storyboard in Resources */,
 				7FB1BD151C6258B800D63762 /* Assets.xcassets in Resources */,
+				7FA45D921C64E744009106BC /* Country_Road_tall.jpg in Resources */,
 				7FB1BD131C6258B800D63762 /* Main.storyboard in Resources */,
+				7FA45D8E1C64E593009106BC /* amazing_running.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +280,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F62BF331C62A72000DDD296 /* SportsTracker.xcdatamodeld in Sources */,
 				7FB1BD251C6266D100D63762 /* ExploreViewController.m in Sources */,
 				7FB1BD101C6258B800D63762 /* DiaryViewController.m in Sources */,
 				7FB1BD0A1C6258B800D63762 /* AppDelegate.m in Sources */,
@@ -426,19 +438,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7F62BF311C62A72000DDD296 /* SportsTracker.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7F62BF321C62A72000DDD296 /* SportsTracker.xcdatamodel */,
-			);
-			currentVersion = 7F62BF321C62A72000DDD296 /* SportsTracker.xcdatamodel */;
-			path = SportsTracker.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7FB1BCFA1C6258B800D63762 /* Project object */;
 }
