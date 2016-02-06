@@ -12,6 +12,10 @@
 		7FA45D8C1C64A33A009106BC /* MainSingUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45D8B1C64A33A009106BC /* MainSingUpViewController.m */; };
 		7FA45D8E1C64E593009106BC /* amazing_running.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45D8D1C64E593009106BC /* amazing_running.jpg */; };
 		7FA45D921C64E744009106BC /* Country_Road_tall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45D911C64E744009106BC /* Country_Road_tall.jpg */; };
+		7FB0571E1C657800004B0008 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0571D1C657800004B0008 /* SignUpViewController.m */; };
+		7FB057211C657818004B0008 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057201C657818004B0008 /* LoginViewController.m */; };
+		7FB057251C6578AC004B0008 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057241C6578AC004B0008 /* User.m */; };
+		7FB057291C662BAE004B0008 /* SQLStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057281C662BAE004B0008 /* SQLStrings.m */; };
 		7FB1BD071C6258B800D63762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD061C6258B800D63762 /* main.m */; };
 		7FB1BD0A1C6258B800D63762 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD091C6258B800D63762 /* AppDelegate.m */; };
 		7FB1BD0D1C6258B800D63762 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD0C1C6258B800D63762 /* HomeViewController.m */; };
@@ -30,6 +34,14 @@
 		7FA45D8B1C64A33A009106BC /* MainSingUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSingUpViewController.m; sourceTree = "<group>"; };
 		7FA45D8D1C64E593009106BC /* amazing_running.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amazing_running.jpg; sourceTree = "<group>"; };
 		7FA45D911C64E744009106BC /* Country_Road_tall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Country_Road_tall.jpg; sourceTree = "<group>"; };
+		7FB0571C1C657800004B0008 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		7FB0571D1C657800004B0008 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		7FB0571F1C657818004B0008 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7FB057201C657818004B0008 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7FB057231C6578AC004B0008 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		7FB057241C6578AC004B0008 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		7FB057271C662BAE004B0008 /* SQLStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLStrings.h; sourceTree = "<group>"; };
+		7FB057281C662BAE004B0008 /* SQLStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLStrings.m; sourceTree = "<group>"; };
 		7FB1BD021C6258B800D63762 /* SportsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB1BD061C6258B800D63762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7FB1BD081C6258B800D63762 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +108,24 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		7FB057221C657887004B0008 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7FB057231C6578AC004B0008 /* User.h */,
+				7FB057241C6578AC004B0008 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7FB057261C662B90004B0008 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7FB057271C662BAE004B0008 /* SQLStrings.h */,
+				7FB057281C662BAE004B0008 /* SQLStrings.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		7FB1BCF91C6258B800D63762 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +147,8 @@
 		7FB1BD041C6258B800D63762 /* SportsTracker */ = {
 			isa = PBXGroup;
 			children = (
+				7FB057261C662B90004B0008 /* Constants */,
+				7FB057221C657887004B0008 /* Models */,
 				7FA45D931C64EADC009106BC /* Views */,
 				7FA45D871C6485FB009106BC /* Images */,
 				7FB1BD221C62660B00D63762 /* ViewControllers */,
@@ -152,6 +184,10 @@
 				7FB1BD271C626A4600D63762 /* SettingsViewController.m */,
 				7FA45D8A1C64A33A009106BC /* MainSingUpViewController.h */,
 				7FA45D8B1C64A33A009106BC /* MainSingUpViewController.m */,
+				7FB0571C1C657800004B0008 /* SignUpViewController.h */,
+				7FB0571D1C657800004B0008 /* SignUpViewController.m */,
+				7FB0571F1C657818004B0008 /* LoginViewController.h */,
+				7FB057201C657818004B0008 /* LoginViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -280,12 +316,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB057291C662BAE004B0008 /* SQLStrings.m in Sources */,
 				7FB1BD251C6266D100D63762 /* ExploreViewController.m in Sources */,
 				7FB1BD101C6258B800D63762 /* DiaryViewController.m in Sources */,
 				7FB1BD0A1C6258B800D63762 /* AppDelegate.m in Sources */,
 				7FB1BD281C626A4600D63762 /* SettingsViewController.m in Sources */,
 				7FB1BD0D1C6258B800D63762 /* HomeViewController.m in Sources */,
+				7FB057211C657818004B0008 /* LoginViewController.m in Sources */,
+				7FB057251C6578AC004B0008 /* User.m in Sources */,
 				7FB1BD071C6258B800D63762 /* main.m in Sources */,
+				7FB0571E1C657800004B0008 /* SignUpViewController.m in Sources */,
 				7FA45D8C1C64A33A009106BC /* MainSingUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

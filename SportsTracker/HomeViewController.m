@@ -7,7 +7,9 @@
 //
 
 #import "HomeViewController.h"
+#import "User.h"
 #import "FMDB.h"
+#import "SQLStrings.h"
 
 @interface HomeViewController ()
 
@@ -20,13 +22,11 @@
     [super viewDidLoad];
     
     NSLog(@"check and create database");
- 
-    
+
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsPath = [paths objectAtIndex:0];
-    NSString *path = [docsPath stringByAppendingPathComponent:@"SportsTracker.db"];
-    NSString *createTableUser = @"CREATE TABLE users(id INT PRIMARY KEY, password TEXT, name TEXT, firstName TEXT, lastName TEXT,  email TEXT, age INT, isLogged INT)";
-    NSLog(@"%@",path);
+    NSString *path = [docsPath stringByAppendingPathComponent:databaseName];
+    //NSLog(@"%@", path);
     FMDatabase *db = [FMDatabase databaseWithPath:path];
     if (![db open]) {
      
@@ -35,9 +35,14 @@
     else{
         [db open];
         NSLog(@"Database exist.");
-        FMResultSet *selectResult = [db executeQuery:@"SELECT * FROM user"];
+        FMResultSet *selectResult = [db executeQuery: selectAllUsersSQL];
         if (selectResult == nil) {
-            [db executeUpdate:createTableUser];
+            [db executeUpdate:createTableUserSQL];
+            //NSLog(@"Table created!");
+        }
+        else{
+            //NSLog(@"Table exist");
+            [db close];
         }
     }
     
