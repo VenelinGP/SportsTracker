@@ -788,28 +788,6 @@ keep your training history safe.</string>
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoE-oB-are">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="EeB-1D-AK7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
-                                <color key="tintColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="START NEW WORKOUT">
-                                    <color key="titleColor" red="1" green="0.99196012590805982" blue="0.97125447721912217" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="EeB-1D-AK7"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="EeB-1D-AK7"/>
-                                    </mask>
-                                </variation>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgv-hn-qdF">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -854,13 +832,21 @@ keep your training history safe.</string>
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD9-bZ-Thx">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLs-mf-x7l">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="XBc-A6-0PR"/>
+                                    <constraint firstAttribute="width" constant="150" id="XBc-A6-0PR">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="188"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Sing Up">
+                                <state key="normal">
                                     <color key="titleColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -874,23 +860,54 @@ keep your training history safe.</string>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="mx4-wx-WbF" kind="show" id="34Q-kL-qGA"/>
+                                    <segue destination="mx4-wx-WbF" kind="show" id="bhT-dK-V7h"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoE-oB-are">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="EeB-1D-AK7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                <color key="tintColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="START NEW WORKOUT">
+                                    <color key="titleColor" red="1" green="0.99196012590805982" blue="0.97125447721912217" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EeB-1D-AK7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EeB-1D-AK7"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="WHl-d7-PeN" kind="show" id="olN-bB-dx2"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.98430089269999999" green="1" blue="0.0036486960340000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="lD9-bZ-Thx" firstAttribute="top" secondItem="YiA-j3-RsL" secondAttribute="top" id="0bc-Y2-2mc"/>
                             <constraint firstItem="fgv-hn-qdF" firstAttribute="centerX" secondItem="HoE-oB-are" secondAttribute="centerX" id="1aX-l7-1NA"/>
                             <constraint firstItem="YiA-j3-RsL" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="152" id="342-x1-PUn">
                                 <variation key="heightClass=regular-widthClass=compact" constant="78"/>
                             </constraint>
+                            <constraint firstItem="lD9-bZ-Thx" firstAttribute="leading" secondItem="YiA-j3-RsL" secondAttribute="leading" id="4e7-YF-hRd">
+                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                            </constraint>
                             <constraint firstItem="HoE-oB-are" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="32" id="6Tq-tt-Ykt"/>
                             <constraint firstItem="qLs-mf-x7l" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="74" id="6UM-wj-GH5"/>
+                            <constraint firstItem="lD9-bZ-Thx" firstAttribute="bottom" secondItem="qLs-mf-x7l" secondAttribute="bottom" id="8Fk-MC-48N"/>
                             <constraint firstAttribute="bottom" secondItem="ZJf-xm-xL5" secondAttribute="bottom" id="AWc-KW-B2f"/>
                             <constraint firstItem="LM7-XP-zSd" firstAttribute="top" secondItem="Pmn-2G-kgV" secondAttribute="bottom" constant="8" symbolic="YES" id="ArU-dg-P9v"/>
                             <constraint firstItem="ZJf-xm-xL5" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="IZZ-9N-exB"/>
                             <constraint firstItem="fgv-hn-qdF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="91" id="L71-6c-nbG"/>
+                            <constraint firstItem="lD9-bZ-Thx" firstAttribute="trailing" secondItem="qLs-mf-x7l" secondAttribute="trailing" id="O00-jA-lIX"/>
                             <constraint firstAttribute="trailing" secondItem="ZJf-xm-xL5" secondAttribute="trailing" id="P5i-Wi-c8X"/>
                             <constraint firstItem="Pmn-2G-kgV" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="55" id="TCF-Gg-coC"/>
                             <constraint firstItem="LM7-XP-zSd" firstAttribute="centerX" secondItem="Pmn-2G-kgV" secondAttribute="centerX" id="VL9-SG-S2L"/>
@@ -911,49 +928,51 @@ keep your training history safe.</string>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YiA-j3-RsL"/>
-                                <exclude reference="HoE-oB-are"/>
                                 <exclude reference="fgv-hn-qdF"/>
                                 <exclude reference="Pmn-2G-kgV"/>
                                 <exclude reference="LM7-XP-zSd"/>
+                                <exclude reference="lD9-bZ-Thx"/>
                                 <exclude reference="qLs-mf-x7l"/>
+                                <exclude reference="HoE-oB-are"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6Tq-tt-Ykt"/>
-                                <exclude reference="qRp-3v-U9Y"/>
-                                <exclude reference="342-x1-PUn"/>
-                                <exclude reference="trE-8G-4Fx"/>
                                 <exclude reference="AWc-KW-B2f"/>
                                 <exclude reference="P5i-Wi-c8X"/>
                                 <exclude reference="WAS-Ua-RUW"/>
                                 <exclude reference="iek-nZ-7dE"/>
-                                <exclude reference="bbE-Jt-UmP"/>
                                 <exclude reference="6UM-wj-GH5"/>
                                 <exclude reference="VrH-UZ-Jw4"/>
                                 <exclude reference="WHp-DR-seJ"/>
-                                <exclude reference="ArU-dg-P9v"/>
-                                <exclude reference="VL9-SG-S2L"/>
-                                <exclude reference="TCF-Gg-coC"/>
-                                <exclude reference="ZDB-0F-JR0"/>
-                                <exclude reference="tBe-fr-8jK"/>
+                                <exclude reference="342-x1-PUn"/>
+                                <exclude reference="trE-8G-4Fx"/>
+                                <exclude reference="0bc-Y2-2mc"/>
+                                <exclude reference="4e7-YF-hRd"/>
+                                <exclude reference="8Fk-MC-48N"/>
+                                <exclude reference="O00-jA-lIX"/>
                                 <exclude reference="1aX-l7-1NA"/>
                                 <exclude reference="L71-6c-nbG"/>
                                 <exclude reference="cNO-OV-L28"/>
+                                <exclude reference="TCF-Gg-coC"/>
+                                <exclude reference="ZDB-0F-JR0"/>
+                                <exclude reference="tBe-fr-8jK"/>
+                                <exclude reference="ArU-dg-P9v"/>
+                                <exclude reference="VL9-SG-S2L"/>
+                                <exclude reference="6Tq-tt-Ykt"/>
+                                <exclude reference="qRp-3v-U9Y"/>
+                                <exclude reference="bbE-Jt-UmP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="YiA-j3-RsL"/>
-                                <include reference="HoE-oB-are"/>
                                 <include reference="fgv-hn-qdF"/>
                                 <include reference="Pmn-2G-kgV"/>
                                 <include reference="LM7-XP-zSd"/>
+                                <include reference="lD9-bZ-Thx"/>
                                 <include reference="qLs-mf-x7l"/>
+                                <include reference="HoE-oB-are"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6Tq-tt-Ykt"/>
-                                <include reference="qRp-3v-U9Y"/>
-                                <include reference="342-x1-PUn"/>
-                                <include reference="trE-8G-4Fx"/>
                                 <include reference="AWc-KW-B2f"/>
                                 <exclude reference="IZZ-9N-exB"/>
                                 <include reference="P5i-Wi-c8X"/>
@@ -962,23 +981,32 @@ keep your training history safe.</string>
                                 <exclude reference="bcM-Om-LKg"/>
                                 <include reference="iek-nZ-7dE"/>
                                 <exclude reference="saL-T1-m7q"/>
-                                <include reference="bbE-Jt-UmP"/>
                                 <include reference="6UM-wj-GH5"/>
                                 <include reference="VrH-UZ-Jw4"/>
                                 <include reference="WHp-DR-seJ"/>
-                                <include reference="ArU-dg-P9v"/>
-                                <include reference="VL9-SG-S2L"/>
-                                <include reference="TCF-Gg-coC"/>
-                                <include reference="ZDB-0F-JR0"/>
-                                <include reference="tBe-fr-8jK"/>
+                                <include reference="342-x1-PUn"/>
+                                <include reference="trE-8G-4Fx"/>
+                                <include reference="0bc-Y2-2mc"/>
+                                <include reference="4e7-YF-hRd"/>
+                                <include reference="8Fk-MC-48N"/>
+                                <include reference="O00-jA-lIX"/>
                                 <include reference="1aX-l7-1NA"/>
                                 <include reference="L71-6c-nbG"/>
                                 <include reference="cNO-OV-L28"/>
+                                <include reference="TCF-Gg-coC"/>
+                                <include reference="ZDB-0F-JR0"/>
+                                <include reference="tBe-fr-8jK"/>
+                                <include reference="ArU-dg-P9v"/>
+                                <include reference="VL9-SG-S2L"/>
+                                <include reference="6Tq-tt-Ykt"/>
+                                <include reference="qRp-3v-U9Y"/>
+                                <include reference="bbE-Jt-UmP"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Home-50" selectedImage="Home-50" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="labelForButton" destination="lD9-bZ-Thx" id="MAg-7C-qxS"/>
                         <outlet property="profileImageView" destination="YiA-j3-RsL" id="CbS-e3-QfW"/>
                         <outletCollection property="profileImageView" destination="YiA-j3-RsL" id="4zP-TO-2HA"/>
                     </connections>
@@ -1032,6 +1060,23 @@ keep your training history safe.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1534" y="-300"/>
+        </scene>
+        <!--Workout View Controller-->
+        <scene sceneID="57X-yZ-qOR">
+            <objects>
+                <viewController id="WHl-d7-PeN" customClass="WorkoutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yzO-LI-rzF"/>
+                        <viewControllerLayoutGuide type="bottom" id="qHp-Bf-XYh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qgb-hC-FuB">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9pT-l6-0wN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2326.5" y="-297"/>
         </scene>
         <!--Explore-->
         <scene sceneID="Xzi-4n-XIB">
@@ -1142,7 +1187,7 @@ keep your training history safe.</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-394.5" y="58.5"/>
+            <point key="canvasLocation" x="-382.5" y="27"/>
         </scene>
     </scenes>
     <resources>

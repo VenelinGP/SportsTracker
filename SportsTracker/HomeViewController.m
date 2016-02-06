@@ -12,7 +12,7 @@
 #import "SQLStrings.h"
 
 @interface HomeViewController ()
-
+@property (strong, nonatomic) IBOutlet UILabel *labelForButton;
 
 @end
 
@@ -23,24 +23,31 @@
     
     NSLog(@"check and create database");
 
+    NSString *selectUserIsLogged =[NSString stringWithFormat: @"%@ WHERE isLogged = 1", selectAllUsersSQL];
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsPath = [paths objectAtIndex:0];
     NSString *path = [docsPath stringByAppendingPathComponent:databaseName];
     //NSLog(@"%@", path);
     FMDatabase *db = [FMDatabase databaseWithPath:path];
     if (![db open]) {
-     
-        return;
+       return;
     }
     else{
         [db open];
         NSLog(@"Database exist.");
-        FMResultSet *selectResult = [db executeQuery: selectAllUsersSQL];
+        FMResultSet *selectResult = [db executeQuery: selectUserIsLogged];
         if (selectResult == nil) {
             [db executeUpdate:createTableUserSQL];
             //NSLog(@"Table created!");
         }
         else{
+            while ([selectResult next]) {
+                //NSString  *currentUsername = [selectResult stringForColumn:@"username"];
+                NSString *currentFullName = [selectResult stringForColumn:@"fullName"];
+                NSLog(@"Name: %@", currentFullName);
+                self.labelForButton.text = currentFullName;
+            }
             //NSLog(@"Table exist");
             [db close];
         }
@@ -56,5 +63,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end

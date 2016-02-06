@@ -16,6 +16,7 @@
 		7FB057211C657818004B0008 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057201C657818004B0008 /* LoginViewController.m */; };
 		7FB057251C6578AC004B0008 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057241C6578AC004B0008 /* User.m */; };
 		7FB057291C662BAE004B0008 /* SQLStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057281C662BAE004B0008 /* SQLStrings.m */; };
+		7FB0572C1C6682A9004B0008 /* WorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0572B1C6682A9004B0008 /* WorkoutViewController.m */; };
 		7FB1BD071C6258B800D63762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD061C6258B800D63762 /* main.m */; };
 		7FB1BD0A1C6258B800D63762 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD091C6258B800D63762 /* AppDelegate.m */; };
 		7FB1BD0D1C6258B800D63762 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD0C1C6258B800D63762 /* HomeViewController.m */; };
@@ -42,6 +43,8 @@
 		7FB057241C6578AC004B0008 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		7FB057271C662BAE004B0008 /* SQLStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLStrings.h; sourceTree = "<group>"; };
 		7FB057281C662BAE004B0008 /* SQLStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLStrings.m; sourceTree = "<group>"; };
+		7FB0572A1C6682A9004B0008 /* WorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutViewController.h; sourceTree = "<group>"; };
+		7FB0572B1C6682A9004B0008 /* WorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutViewController.m; sourceTree = "<group>"; };
 		7FB1BD021C6258B800D63762 /* SportsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB1BD061C6258B800D63762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7FB1BD081C6258B800D63762 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				7FB0571D1C657800004B0008 /* SignUpViewController.m */,
 				7FB0571F1C657818004B0008 /* LoginViewController.h */,
 				7FB057201C657818004B0008 /* LoginViewController.m */,
+				7FB0572A1C6682A9004B0008 /* WorkoutViewController.h */,
+				7FB0572B1C6682A9004B0008 /* WorkoutViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				7FB1BD0D1C6258B800D63762 /* HomeViewController.m in Sources */,
 				7FB057211C657818004B0008 /* LoginViewController.m in Sources */,
 				7FB057251C6578AC004B0008 /* User.m in Sources */,
+				7FB0572C1C6682A9004B0008 /* WorkoutViewController.m in Sources */,
 				7FB1BD071C6258B800D63762 /* main.m in Sources */,
 				7FB0571E1C657800004B0008 /* SignUpViewController.m in Sources */,
 				7FA45D8C1C64A33A009106BC /* MainSingUpViewController.m in Sources */,

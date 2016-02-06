@@ -3,11 +3,16 @@
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
+
 target 'SportsTracker' do
 
 workspace 'SportsTracker'
 
 pod 'FMDB'
+
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.1'
+pod 'GoogleMaps'
 
 end
 
