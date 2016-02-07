@@ -14,6 +14,8 @@
 
 @interface WorkoutViewController ()<CLLocationManagerDelegate, GMSMapViewDelegate>
 
+@property (strong, nonatomic) WorkoutSubUIView *workoutSubView;
+
 @end
 
 @implementation WorkoutViewController
@@ -25,6 +27,8 @@ float currentLong;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    [f setDateFormat:@"dd.MMM.YYYY   hh:mm"];
     
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: defaultLat
                                                             longitude: defaultLong
@@ -33,20 +37,27 @@ float currentLong;
     self.mapContainerView.camera = camera;
     self.mapContainerView.myLocationEnabled = YES;
     
-    WorkoutSubUIView *subView = [[[NSBundle mainBundle] loadNibNamed:@"WorkoutSubUIView"
+    _workoutSubView = [[[NSBundle mainBundle] loadNibNamed:@"WorkoutSubUIView"
                                                                owner:self
                                                              options:nil]
                                  objectAtIndex:0];
-    [self.view addSubview:subView];
+    [self.view addSubview:_workoutSubView];
     
-    [subView.buttonStart addTarget:self action:@selector(startLocationManager) forControlEvents:UIControlEventTouchUpInside];
+    self.workoutSubView.labelDate.text = [NSString stringWithFormat:@"%@", [f stringFromDate:[NSDate date]]];
+    [_workoutSubView.buttonStart addTarget:self action:@selector(startLocationManager) forControlEvents:UIControlEventTouchUpInside];
+    //self.workoutSubView.buttonStart.hidden = NO;
+    self.workoutSubView.buttonStop.hidden = YES;
+
+    [_workoutSubView.buttonStart addTarget:self action:@selector(startWorkout) forControlEvents:UIControlEventTouchUpInside];
+    [_workoutSubView.buttonStop addTarget:self action:@selector(stopWorkout) forControlEvents:UIControlEventTouchUpInside];
 
     
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.mapContainerView addObserver:self forKeyPath:@"myLocation" options:0 context:nil];
+            [super viewWillAppear:animated];
+            [self.mapContainerView addObserver:self forKeyPath:@"myLocation" options:0 context:nil];
 }
 
 - (void)dealloc {
@@ -65,6 +76,25 @@ float currentLong;
         [self.mapContainerView animateToLocation:target];
         [self.mapContainerView animateToZoom:17];
     }
+}
+
+-(void)startWorkout{
+    self.workoutSubView.buttonStart.hidden = YES;
+    self.workoutSubView.buttonStop.hidden = NO;
+    self.workoutSubView.labelDuration.text = @"00:00:00";
+    self.workoutSubView.labelDistance.text = @"0.00 km";
+    self.workoutSubView.labelMaxSpeed.text = @"0.00 km/h";
+    self.workoutSubView.labelAvgSpeed.text = @"0.00 km/h";
+}
+
+-(void)stopWorkout{
+    self.workoutSubView.buttonStart.hidden = NO;
+    self.workoutSubView.buttonStop.hidden = YES;
+    self.workoutSubView.labelDuration.text = @"10:00:00";
+    self.workoutSubView.labelDistance.text = @"1.00 km";
+    self.workoutSubView.labelMaxSpeed.text = @"1.00 km/h";
+    self.workoutSubView.labelAvgSpeed.text = @"1.00 km/h";
+    [locationManager stopUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {
