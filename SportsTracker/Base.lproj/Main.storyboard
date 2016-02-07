@@ -675,28 +675,28 @@ keep your training history safe.</string>
                                 <exclude reference="mJt-bu-t4e"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="2Sj-v7-t98"/>
+                                <exclude reference="9wY-ya-VaM"/>
+                                <exclude reference="cN4-Qe-Fhd"/>
+                                <exclude reference="Rkx-Ae-2dc"/>
+                                <exclude reference="7qc-D5-w94"/>
+                                <exclude reference="PIx-Mr-DA1"/>
+                                <exclude reference="1J9-j9-agY"/>
+                                <exclude reference="g2L-fA-eLd"/>
+                                <exclude reference="ZMi-EA-5FB"/>
+                                <exclude reference="lMy-Vo-52q"/>
+                                <exclude reference="HoD-fZ-Ked"/>
+                                <exclude reference="maR-la-djO"/>
+                                <exclude reference="pab-to-nWQ"/>
+                                <exclude reference="93h-Ga-igG"/>
+                                <exclude reference="Twb-RH-s5b"/>
+                                <exclude reference="YQF-OG-fr8"/>
+                                <exclude reference="xD3-ja-QyZ"/>
+                                <exclude reference="1A8-XJ-7cH"/>
                                 <exclude reference="Guh-cX-qEw"/>
                                 <exclude reference="IZu-Q1-ZVc"/>
                                 <exclude reference="fmR-GE-RaS"/>
                                 <exclude reference="gGM-Pb-AF2"/>
-                                <exclude reference="93h-Ga-igG"/>
-                                <exclude reference="Twb-RH-s5b"/>
-                                <exclude reference="1J9-j9-agY"/>
-                                <exclude reference="g2L-fA-eLd"/>
-                                <exclude reference="1A8-XJ-7cH"/>
-                                <exclude reference="2Sj-v7-t98"/>
-                                <exclude reference="9wY-ya-VaM"/>
-                                <exclude reference="cN4-Qe-Fhd"/>
-                                <exclude reference="YQF-OG-fr8"/>
-                                <exclude reference="xD3-ja-QyZ"/>
-                                <exclude reference="Rkx-Ae-2dc"/>
-                                <exclude reference="HoD-fZ-Ked"/>
-                                <exclude reference="maR-la-djO"/>
-                                <exclude reference="pab-to-nWQ"/>
-                                <exclude reference="7qc-D5-w94"/>
-                                <exclude reference="PIx-Mr-DA1"/>
-                                <exclude reference="ZMi-EA-5FB"/>
-                                <exclude reference="lMy-Vo-52q"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -713,28 +713,28 @@ keep your training history safe.</string>
                                 <include reference="mJt-bu-t4e"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="2Sj-v7-t98"/>
+                                <include reference="9wY-ya-VaM"/>
+                                <include reference="cN4-Qe-Fhd"/>
+                                <include reference="Rkx-Ae-2dc"/>
+                                <include reference="7qc-D5-w94"/>
+                                <include reference="PIx-Mr-DA1"/>
+                                <include reference="1J9-j9-agY"/>
+                                <include reference="g2L-fA-eLd"/>
+                                <include reference="ZMi-EA-5FB"/>
+                                <include reference="lMy-Vo-52q"/>
+                                <include reference="HoD-fZ-Ked"/>
+                                <include reference="maR-la-djO"/>
+                                <include reference="pab-to-nWQ"/>
+                                <include reference="93h-Ga-igG"/>
+                                <include reference="Twb-RH-s5b"/>
+                                <include reference="YQF-OG-fr8"/>
+                                <include reference="xD3-ja-QyZ"/>
+                                <include reference="1A8-XJ-7cH"/>
                                 <include reference="Guh-cX-qEw"/>
                                 <include reference="IZu-Q1-ZVc"/>
                                 <include reference="fmR-GE-RaS"/>
                                 <include reference="gGM-Pb-AF2"/>
-                                <include reference="93h-Ga-igG"/>
-                                <include reference="Twb-RH-s5b"/>
-                                <include reference="1J9-j9-agY"/>
-                                <include reference="g2L-fA-eLd"/>
-                                <include reference="1A8-XJ-7cH"/>
-                                <include reference="2Sj-v7-t98"/>
-                                <include reference="9wY-ya-VaM"/>
-                                <include reference="cN4-Qe-Fhd"/>
-                                <include reference="YQF-OG-fr8"/>
-                                <include reference="xD3-ja-QyZ"/>
-                                <include reference="Rkx-Ae-2dc"/>
-                                <include reference="HoD-fZ-Ked"/>
-                                <include reference="maR-la-djO"/>
-                                <include reference="pab-to-nWQ"/>
-                                <include reference="7qc-D5-w94"/>
-                                <include reference="PIx-Mr-DA1"/>
-                                <include reference="ZMi-EA-5FB"/>
-                                <include reference="lMy-Vo-52q"/>
                             </mask>
                         </variation>
                     </view>
@@ -838,6 +838,31 @@ keep your training history safe.</string>
                                 <color key="textColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoE-oB-are">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="EeB-1D-AK7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                <color key="tintColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="START NEW WORKOUT">
+                                    <color key="titleColor" red="1" green="0.99196012590805982" blue="0.97125447721912217" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EeB-1D-AK7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EeB-1D-AK7"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="WHl-d7-PeN" kind="show" id="ET2-S1-uL8"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLs-mf-x7l">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -861,31 +886,6 @@ keep your training history safe.</string>
                                 </variation>
                                 <connections>
                                     <segue destination="mx4-wx-WbF" kind="show" id="bhT-dK-V7h"/>
-                                </connections>
-                            </button>
-                            <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoE-oB-are">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="EeB-1D-AK7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
-                                <color key="tintColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="START NEW WORKOUT">
-                                    <color key="titleColor" red="1" green="0.99196012590805982" blue="0.97125447721912217" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="EeB-1D-AK7"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="EeB-1D-AK7"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="WHl-d7-PeN" kind="show" id="6j8-z1-nUW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -932,34 +932,34 @@ keep your training history safe.</string>
                                 <exclude reference="Pmn-2G-kgV"/>
                                 <exclude reference="LM7-XP-zSd"/>
                                 <exclude reference="lD9-bZ-Thx"/>
-                                <exclude reference="qLs-mf-x7l"/>
                                 <exclude reference="HoE-oB-are"/>
+                                <exclude reference="qLs-mf-x7l"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="6Tq-tt-Ykt"/>
+                                <exclude reference="qRp-3v-U9Y"/>
+                                <exclude reference="6UM-wj-GH5"/>
+                                <exclude reference="VrH-UZ-Jw4"/>
+                                <exclude reference="342-x1-PUn"/>
+                                <exclude reference="trE-8G-4Fx"/>
                                 <exclude reference="AWc-KW-B2f"/>
                                 <exclude reference="P5i-Wi-c8X"/>
                                 <exclude reference="WAS-Ua-RUW"/>
                                 <exclude reference="iek-nZ-7dE"/>
-                                <exclude reference="6UM-wj-GH5"/>
-                                <exclude reference="VrH-UZ-Jw4"/>
+                                <exclude reference="bbE-Jt-UmP"/>
                                 <exclude reference="WHp-DR-seJ"/>
-                                <exclude reference="342-x1-PUn"/>
-                                <exclude reference="trE-8G-4Fx"/>
+                                <exclude reference="ArU-dg-P9v"/>
+                                <exclude reference="VL9-SG-S2L"/>
+                                <exclude reference="TCF-Gg-coC"/>
+                                <exclude reference="ZDB-0F-JR0"/>
+                                <exclude reference="tBe-fr-8jK"/>
+                                <exclude reference="1aX-l7-1NA"/>
+                                <exclude reference="L71-6c-nbG"/>
+                                <exclude reference="cNO-OV-L28"/>
                                 <exclude reference="0bc-Y2-2mc"/>
                                 <exclude reference="4e7-YF-hRd"/>
                                 <exclude reference="8Fk-MC-48N"/>
                                 <exclude reference="O00-jA-lIX"/>
-                                <exclude reference="1aX-l7-1NA"/>
-                                <exclude reference="L71-6c-nbG"/>
-                                <exclude reference="cNO-OV-L28"/>
-                                <exclude reference="TCF-Gg-coC"/>
-                                <exclude reference="ZDB-0F-JR0"/>
-                                <exclude reference="tBe-fr-8jK"/>
-                                <exclude reference="ArU-dg-P9v"/>
-                                <exclude reference="VL9-SG-S2L"/>
-                                <exclude reference="6Tq-tt-Ykt"/>
-                                <exclude reference="qRp-3v-U9Y"/>
-                                <exclude reference="bbE-Jt-UmP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -969,10 +969,16 @@ keep your training history safe.</string>
                                 <include reference="Pmn-2G-kgV"/>
                                 <include reference="LM7-XP-zSd"/>
                                 <include reference="lD9-bZ-Thx"/>
-                                <include reference="qLs-mf-x7l"/>
                                 <include reference="HoE-oB-are"/>
+                                <include reference="qLs-mf-x7l"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="6Tq-tt-Ykt"/>
+                                <include reference="qRp-3v-U9Y"/>
+                                <include reference="6UM-wj-GH5"/>
+                                <include reference="VrH-UZ-Jw4"/>
+                                <include reference="342-x1-PUn"/>
+                                <include reference="trE-8G-4Fx"/>
                                 <include reference="AWc-KW-B2f"/>
                                 <exclude reference="IZZ-9N-exB"/>
                                 <include reference="P5i-Wi-c8X"/>
@@ -981,26 +987,20 @@ keep your training history safe.</string>
                                 <exclude reference="bcM-Om-LKg"/>
                                 <include reference="iek-nZ-7dE"/>
                                 <exclude reference="saL-T1-m7q"/>
-                                <include reference="6UM-wj-GH5"/>
-                                <include reference="VrH-UZ-Jw4"/>
+                                <include reference="bbE-Jt-UmP"/>
                                 <include reference="WHp-DR-seJ"/>
-                                <include reference="342-x1-PUn"/>
-                                <include reference="trE-8G-4Fx"/>
+                                <include reference="ArU-dg-P9v"/>
+                                <include reference="VL9-SG-S2L"/>
+                                <include reference="TCF-Gg-coC"/>
+                                <include reference="ZDB-0F-JR0"/>
+                                <include reference="tBe-fr-8jK"/>
+                                <include reference="1aX-l7-1NA"/>
+                                <include reference="L71-6c-nbG"/>
+                                <include reference="cNO-OV-L28"/>
                                 <include reference="0bc-Y2-2mc"/>
                                 <include reference="4e7-YF-hRd"/>
                                 <include reference="8Fk-MC-48N"/>
                                 <include reference="O00-jA-lIX"/>
-                                <include reference="1aX-l7-1NA"/>
-                                <include reference="L71-6c-nbG"/>
-                                <include reference="cNO-OV-L28"/>
-                                <include reference="TCF-Gg-coC"/>
-                                <include reference="ZDB-0F-JR0"/>
-                                <include reference="tBe-fr-8jK"/>
-                                <include reference="ArU-dg-P9v"/>
-                                <include reference="VL9-SG-S2L"/>
-                                <include reference="6Tq-tt-Ykt"/>
-                                <include reference="qRp-3v-U9Y"/>
-                                <include reference="bbE-Jt-UmP"/>
                             </mask>
                         </variation>
                     </view>
@@ -1064,52 +1064,36 @@ keep your training history safe.</string>
         <!--Workout View Controller-->
         <scene sceneID="57X-yZ-qOR">
             <objects>
-                <viewController id="WHl-d7-PeN" customClass="WorkoutViewController" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" id="WHl-d7-PeN" customClass="WorkoutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HjY-ZW-DHW"/>
                         <viewControllerLayoutGuide type="bottom" id="zGg-bM-mag"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OAX-qF-0HH">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="OAX-qF-0HH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzH-vQ-icP" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="380" id="LhU-Qh-uNK"/>
-                                    <constraint firstAttribute="height" constant="220" id="dTs-vy-jdg"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="LhU-Qh-uNK"/>
-                                        <exclude reference="dTs-vy-jdg"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="LhU-Qh-uNK"/>
-                                        <include reference="dTs-vy-jdg"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hzH-vQ-icP" firstAttribute="top" secondItem="HjY-ZW-DHW" secondAttribute="bottom" constant="14" id="VdB-4U-2Lc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hzH-vQ-icP" secondAttribute="trailing" constant="-10" id="Zg3-qm-OVA"/>
-                            <constraint firstItem="hzH-vQ-icP" firstAttribute="leading" secondItem="OAX-qF-0HH" secondAttribute="leadingMargin" constant="-10" id="a2t-Nw-HnW"/>
-                            <constraint firstItem="zGg-bM-mag" firstAttribute="top" secondItem="hzH-vQ-icP" secondAttribute="bottom" constant="497" id="pMx-vM-5De"/>
+                            <constraint firstItem="hzH-vQ-icP" firstAttribute="top" secondItem="HjY-ZW-DHW" secondAttribute="bottom" constant="14" id="82d-Kz-BKi"/>
+                            <constraint firstItem="hzH-vQ-icP" firstAttribute="leading" secondItem="OAX-qF-0HH" secondAttribute="leadingMargin" constant="-10" id="8bh-Rh-XDg"/>
+                            <constraint firstItem="hzH-vQ-icP" firstAttribute="centerX" secondItem="OAX-qF-0HH" secondAttribute="centerX" id="nYi-Gu-ows"/>
+                            <constraint firstItem="zGg-bM-mag" firstAttribute="top" secondItem="hzH-vQ-icP" secondAttribute="bottom" constant="497" id="yng-3F-LBA"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="hzH-vQ-icP"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="VdB-4U-2Lc"/>
-                                <exclude reference="Zg3-qm-OVA"/>
-                                <exclude reference="a2t-Nw-HnW"/>
-                                <exclude reference="pMx-vM-5De"/>
+                                <exclude reference="82d-Kz-BKi"/>
+                                <exclude reference="8bh-Rh-XDg"/>
+                                <exclude reference="nYi-Gu-ows"/>
+                                <exclude reference="yng-3F-LBA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1117,13 +1101,17 @@ keep your training history safe.</string>
                                 <include reference="hzH-vQ-icP"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="VdB-4U-2Lc"/>
-                                <include reference="Zg3-qm-OVA"/>
-                                <include reference="a2t-Nw-HnW"/>
-                                <include reference="pMx-vM-5De"/>
+                                <include reference="82d-Kz-BKi"/>
+                                <include reference="8bh-Rh-XDg"/>
+                                <include reference="nYi-Gu-ows"/>
+                                <include reference="yng-3F-LBA"/>
                             </mask>
                         </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="1000" height="800"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapContainerView" destination="hzH-vQ-icP" id="GaR-5Y-KPx"/>
                     </connections>

@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GoogleMaps/GoogleMaps.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface WorkoutSubUIView : UIView
 @property (strong, nonatomic) IBOutlet UILabel *labelDuration;
 @property (strong, nonatomic) IBOutlet UILabel *labelDistance;
 @property (strong, nonatomic) IBOutlet UILabel *labelMaxSpeed;
 @property (strong, nonatomic) IBOutlet UILabel *labelAvgSpeed;
-- (IBAction)buttonStart:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *buttonStart;
+
 
 @end

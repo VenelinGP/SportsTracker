@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "WorkoutSubUIView.h"
 
 @interface SettingsViewController ()
 
@@ -17,7 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
+    
+   }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -9,9 +9,10 @@
 #import "WorkoutViewController.h"
 #import "WorkoutSubUIView.h"
 #import "Coordinates.h"
+#import "GoogleMaps/GoogleMaps.h"
 
 
-@interface WorkoutViewController ()<CLLocationManagerDelegate>
+@interface WorkoutViewController ()<CLLocationManagerDelegate, GMSMapViewDelegate>
 
 @end
 
@@ -25,6 +26,55 @@ float currentLong;
     [super viewDidLoad];
 
     
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: defaultLat
+                                                            longitude: defaultLong
+                                                                 zoom: defaultZoom];
+    //set the camera for the map
+    self.mapContainerView.camera = camera;
+    self.mapContainerView.myLocationEnabled = YES;
+    
+    WorkoutSubUIView *subView = [[[NSBundle mainBundle] loadNibNamed:@"WorkoutSubUIView"
+                                                               owner:self
+                                                             options:nil]
+                                 objectAtIndex:0];
+    [self.view addSubview:subView];
+    
+    [subView.buttonStart addTarget:self action:@selector(startLocationManager) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.mapContainerView addObserver:self forKeyPath:@"myLocation" options:0 context:nil];
+}
+
+- (void)dealloc {
+    [self.mapContainerView removeObserver:self forKeyPath:@"myLocation"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@"myLocation"]) {
+        CLLocation *location = [object myLocation];
+        //...
+        NSLog(@"Location, %@,", location);
+        
+        CLLocationCoordinate2D target =
+        CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
+        
+        [self.mapContainerView animateToLocation:target];
+        [self.mapContainerView animateToZoom:17];
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+-(void) startLocationManager{
+
     if([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied) {
         NSLog(@"Enabled");
     } else {
@@ -35,47 +85,18 @@ float currentLong;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.delegate = self;
     [locationManager requestAlwaysAuthorization];
-    
     [locationManager startUpdatingLocation];
-    
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: defaultLat
-                                                            longitude: defaultLong
-                                                                 zoom: defaultZoom];
-    
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(defaultLat, defaultLong);
-    marker.title = @"Sliven";
-    marker.snippet = @"Bulgaria";
-    marker.map = self.mapContainerView;
-    
-    //set the camera for the map
-    self.mapContainerView.camera = camera;
-    self.mapContainerView.myLocationEnabled = YES;
-    
-    UIView *subView = [[[NSBundle mainBundle] loadNibNamed:@"WorkoutSubUIView"
-                                                     owner:self
-                                                   options:nil]
-                       objectAtIndex:0];
-    [self.view addSubview:subView];
 
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray*)locations{
     CLLocation *location =[locations lastObject];
     
-    float lat = location.coordinate.latitude;
-    currentLat = lat;
-    float lon = location.coordinate.longitude;
-    currentLong = lon;
+    currentLat = location.coordinate.latitude;
+    currentLong = location.coordinate.longitude;
     
-    NSLog(@"Longtitude: %.2f | Latitude: %.2f", lon, lat);
-    
-    [locationManager stopUpdatingLocation];
+    NSLog(@"Longtitude: %.2f | Latitude: %.2f", currentLong, currentLat);    
+    //[locationManager stopUpdatingLocation];
 }
 
 
