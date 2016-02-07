@@ -885,7 +885,7 @@ keep your training history safe.</string>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="WHl-d7-PeN" kind="show" id="olN-bB-dx2"/>
+                                    <segue destination="WHl-d7-PeN" kind="show" id="6j8-z1-nUW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1066,13 +1066,67 @@ keep your training history safe.</string>
             <objects>
                 <viewController id="WHl-d7-PeN" customClass="WorkoutViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yzO-LI-rzF"/>
-                        <viewControllerLayoutGuide type="bottom" id="qHp-Bf-XYh"/>
+                        <viewControllerLayoutGuide type="top" id="HjY-ZW-DHW"/>
+                        <viewControllerLayoutGuide type="bottom" id="zGg-bM-mag"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qgb-hC-FuB">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view key="view" contentMode="scaleToFill" id="OAX-qF-0HH">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzH-vQ-icP" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="380" id="LhU-Qh-uNK"/>
+                                    <constraint firstAttribute="height" constant="220" id="dTs-vy-jdg"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LhU-Qh-uNK"/>
+                                        <exclude reference="dTs-vy-jdg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="LhU-Qh-uNK"/>
+                                        <include reference="dTs-vy-jdg"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hzH-vQ-icP" firstAttribute="top" secondItem="HjY-ZW-DHW" secondAttribute="bottom" constant="14" id="VdB-4U-2Lc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hzH-vQ-icP" secondAttribute="trailing" constant="-10" id="Zg3-qm-OVA"/>
+                            <constraint firstItem="hzH-vQ-icP" firstAttribute="leading" secondItem="OAX-qF-0HH" secondAttribute="leadingMargin" constant="-10" id="a2t-Nw-HnW"/>
+                            <constraint firstItem="zGg-bM-mag" firstAttribute="top" secondItem="hzH-vQ-icP" secondAttribute="bottom" constant="497" id="pMx-vM-5De"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hzH-vQ-icP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="VdB-4U-2Lc"/>
+                                <exclude reference="Zg3-qm-OVA"/>
+                                <exclude reference="a2t-Nw-HnW"/>
+                                <exclude reference="pMx-vM-5De"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hzH-vQ-icP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="VdB-4U-2Lc"/>
+                                <include reference="Zg3-qm-OVA"/>
+                                <include reference="a2t-Nw-HnW"/>
+                                <include reference="pMx-vM-5De"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="mapContainerView" destination="hzH-vQ-icP" id="GaR-5Y-KPx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pT-l6-0wN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1124,7 +1178,7 @@ keep your training history safe.</string>
         <!--Settings-->
         <scene sceneID="2r4-dt-2ig">
             <objects>
-                <viewController id="vKU-oM-03g" customClass="ExploreViewController" sceneMemberID="viewController">
+                <viewController id="vKU-oM-03g" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ugX-TP-c57"/>
                         <viewControllerLayoutGuide type="bottom" id="4IH-eM-NZE"/>

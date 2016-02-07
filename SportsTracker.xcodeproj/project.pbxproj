@@ -16,7 +16,10 @@
 		7FB057211C657818004B0008 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057201C657818004B0008 /* LoginViewController.m */; };
 		7FB057251C6578AC004B0008 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057241C6578AC004B0008 /* User.m */; };
 		7FB057291C662BAE004B0008 /* SQLStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057281C662BAE004B0008 /* SQLStrings.m */; };
-		7FB0572C1C6682A9004B0008 /* WorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0572B1C6682A9004B0008 /* WorkoutViewController.m */; };
+		7FB057381C675FFD004B0008 /* WorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057371C675FFD004B0008 /* WorkoutViewController.m */; };
+		7FB057431C6765A8004B0008 /* WorkoutSubUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057421C6765A8004B0008 /* WorkoutSubUIView.m */; };
+		7FB057481C676D82004B0008 /* WorkoutSubUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FB057471C676D82004B0008 /* WorkoutSubUIView.xib */; };
+		7FB0574B1C67887C004B0008 /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0574A1C67887C004B0008 /* Coordinates.m */; };
 		7FB1BD071C6258B800D63762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD061C6258B800D63762 /* main.m */; };
 		7FB1BD0A1C6258B800D63762 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD091C6258B800D63762 /* AppDelegate.m */; };
 		7FB1BD0D1C6258B800D63762 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1BD0C1C6258B800D63762 /* HomeViewController.m */; };
@@ -43,8 +46,13 @@
 		7FB057241C6578AC004B0008 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		7FB057271C662BAE004B0008 /* SQLStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLStrings.h; sourceTree = "<group>"; };
 		7FB057281C662BAE004B0008 /* SQLStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLStrings.m; sourceTree = "<group>"; };
-		7FB0572A1C6682A9004B0008 /* WorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutViewController.h; sourceTree = "<group>"; };
-		7FB0572B1C6682A9004B0008 /* WorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutViewController.m; sourceTree = "<group>"; };
+		7FB057361C675FFD004B0008 /* WorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutViewController.h; sourceTree = "<group>"; };
+		7FB057371C675FFD004B0008 /* WorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutViewController.m; sourceTree = "<group>"; };
+		7FB057411C6765A8004B0008 /* WorkoutSubUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutSubUIView.h; sourceTree = "<group>"; };
+		7FB057421C6765A8004B0008 /* WorkoutSubUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutSubUIView.m; sourceTree = "<group>"; };
+		7FB057471C676D82004B0008 /* WorkoutSubUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutSubUIView.xib; sourceTree = "<group>"; };
+		7FB057491C67887C004B0008 /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
+		7FB0574A1C67887C004B0008 /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
 		7FB1BD021C6258B800D63762 /* SportsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB1BD061C6258B800D63762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7FB1BD081C6258B800D63762 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,6 +115,9 @@
 		7FA45D931C64EADC009106BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7FB057411C6765A8004B0008 /* WorkoutSubUIView.h */,
+				7FB057421C6765A8004B0008 /* WorkoutSubUIView.m */,
+				7FB057471C676D82004B0008 /* WorkoutSubUIView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -125,8 +136,17 @@
 			children = (
 				7FB057271C662BAE004B0008 /* SQLStrings.h */,
 				7FB057281C662BAE004B0008 /* SQLStrings.m */,
+				7FB057491C67887C004B0008 /* Coordinates.h */,
+				7FB0574A1C67887C004B0008 /* Coordinates.m */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		7FB0572D1C66A70B004B0008 /* GPSProvider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GPSProvider;
 			sourceTree = "<group>";
 		};
 		7FB1BCF91C6258B800D63762 = {
@@ -150,6 +170,7 @@
 		7FB1BD041C6258B800D63762 /* SportsTracker */ = {
 			isa = PBXGroup;
 			children = (
+				7FB0572D1C66A70B004B0008 /* GPSProvider */,
 				7FB057261C662B90004B0008 /* Constants */,
 				7FB057221C657887004B0008 /* Models */,
 				7FA45D931C64EADC009106BC /* Views */,
@@ -191,8 +212,8 @@
 				7FB0571D1C657800004B0008 /* SignUpViewController.m */,
 				7FB0571F1C657818004B0008 /* LoginViewController.h */,
 				7FB057201C657818004B0008 /* LoginViewController.m */,
-				7FB0572A1C6682A9004B0008 /* WorkoutViewController.h */,
-				7FB0572B1C6682A9004B0008 /* WorkoutViewController.m */,
+				7FB057361C675FFD004B0008 /* WorkoutViewController.h */,
+				7FB057371C675FFD004B0008 /* WorkoutViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -260,6 +281,7 @@
 				7FA45D891C648621009106BC /* profile-rabbit-toy.png in Resources */,
 				7FB1BD181C6258B800D63762 /* LaunchScreen.storyboard in Resources */,
 				7FB1BD151C6258B800D63762 /* Assets.xcassets in Resources */,
+				7FB057481C676D82004B0008 /* WorkoutSubUIView.xib in Resources */,
 				7FA45D921C64E744009106BC /* Country_Road_tall.jpg in Resources */,
 				7FB1BD131C6258B800D63762 /* Main.storyboard in Resources */,
 				7FA45D8E1C64E593009106BC /* amazing_running.jpg in Resources */,
@@ -324,15 +346,17 @@
 				7FB057291C662BAE004B0008 /* SQLStrings.m in Sources */,
 				7FB1BD251C6266D100D63762 /* ExploreViewController.m in Sources */,
 				7FB1BD101C6258B800D63762 /* DiaryViewController.m in Sources */,
+				7FB057431C6765A8004B0008 /* WorkoutSubUIView.m in Sources */,
 				7FB1BD0A1C6258B800D63762 /* AppDelegate.m in Sources */,
 				7FB1BD281C626A4600D63762 /* SettingsViewController.m in Sources */,
 				7FB1BD0D1C6258B800D63762 /* HomeViewController.m in Sources */,
 				7FB057211C657818004B0008 /* LoginViewController.m in Sources */,
 				7FB057251C6578AC004B0008 /* User.m in Sources */,
-				7FB0572C1C6682A9004B0008 /* WorkoutViewController.m in Sources */,
+				7FB057381C675FFD004B0008 /* WorkoutViewController.m in Sources */,
 				7FB1BD071C6258B800D63762 /* main.m in Sources */,
 				7FB0571E1C657800004B0008 /* SignUpViewController.m in Sources */,
 				7FA45D8C1C64A33A009106BC /* MainSingUpViewController.m in Sources */,
+				7FB0574B1C67887C004B0008 /* Coordinates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

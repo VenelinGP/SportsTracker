@@ -2,26 +2,62 @@
 //  WorkoutViewController.m
 //  SportsTracker
 //
-//  Created by Venelin Petkov on 2/6/16.
+//  Created by Venelin Petkov on 2/7/16.
 //  Copyright © 2016 Venelin Petkov. All rights reserved.
 //
 
 #import "WorkoutViewController.h"
+#import "WorkoutSubUIView.h"
+#import "Coordinates.h"
 
-@interface WorkoutViewController ()
+
+@interface WorkoutViewController ()<CLLocationManagerDelegate>
 
 @end
 
 @implementation WorkoutViewController
 
+CLLocationManager *locationManager;
+float currentLat;
+float currentLong;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    if([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied) {
+        NSLog(@"Enabled");
+    } else {
+        NSLog(@"Not Enabled");
+    }
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    locationManager = [[CLLocationManager alloc]init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.delegate = self;
+    [locationManager requestAlwaysAuthorization];
+    
+    [locationManager startUpdatingLocation];
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: defaultLat
+                                                            longitude: defaultLong
+                                                                 zoom: defaultZoom];
+    
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(defaultLat, defaultLong);
+    marker.title = @"Sliven";
+    marker.snippet = @"Bulgaria";
+    marker.map = self.mapContainerView;
+    
+    //set the camera for the map
+    self.mapContainerView.camera = camera;
+    self.mapContainerView.myLocationEnabled = YES;
+    
+    UIView *subView = [[[NSBundle mainBundle] loadNibNamed:@"WorkoutSubUIView"
+                                                     owner:self
+                                                   options:nil]
+                       objectAtIndex:0];
+    [self.view addSubview:subView];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,61 +65,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-//    return 0;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray*)locations{
+    CLLocation *location =[locations lastObject];
     
-    // Configure the cell...
+    float lat = location.coordinate.latitude;
+    currentLat = lat;
+    float lon = location.coordinate.longitude;
+    currentLong = lon;
     
-    return cell;
+    NSLog(@"Longtitude: %.2f | Latitude: %.2f", lon, lat);
+    
+    [locationManager stopUpdatingLocation];
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

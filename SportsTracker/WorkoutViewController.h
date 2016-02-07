@@ -2,12 +2,17 @@
 //  WorkoutViewController.h
 //  SportsTracker
 //
-//  Created by Venelin Petkov on 2/6/16.
+//  Created by Venelin Petkov on 2/7/16.
 //  Copyright © 2016 Venelin Petkov. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "GoogleMaps/GoogleMaps.h"
 
-@interface WorkoutViewController : UITableViewController
+@interface WorkoutViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet GMSMapView *mapContainerView;
+
 
 @end
