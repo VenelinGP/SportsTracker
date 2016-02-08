@@ -22,13 +22,14 @@
     [super viewDidLoad];
     
     NSLog(@"check and create database");
-
+    NSString *currentFullName = @"Sign In";
     NSString *selectUserIsLogged =[NSString stringWithFormat: @"%@ WHERE isLogged = 1", selectAllUsersSQL];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsPath = [paths objectAtIndex:0];
     NSString *path = [docsPath stringByAppendingPathComponent:databaseName];
-    //NSLog(@"%@", path);
+    NSLog(@"%@", path);
+    self.labelForButton.text = currentFullName;
     FMDatabase *db = [FMDatabase databaseWithPath:path];
     if (![db open]) {
        return;
@@ -39,12 +40,14 @@
         FMResultSet *selectResult = [db executeQuery: selectUserIsLogged];
         if (selectResult == nil) {
             [db executeUpdate:createTableUserSQL];
+            [db executeUpdate:createTableWorkoutsSQL];
+            [db executeUpdate:createTableLocationsSQL];
             //NSLog(@"Table created!");
         }
         else{
             while ([selectResult next]) {
                 //NSString  *currentUsername = [selectResult stringForColumn:@"username"];
-                NSString *currentFullName = [selectResult stringForColumn:@"fullName"];
+                currentFullName = [selectResult stringForColumn:@"fullName"];
                 NSLog(@"Name: %@", currentFullName);
                 self.labelForButton.text = currentFullName;
             }

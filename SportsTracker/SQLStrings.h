@@ -13,6 +13,8 @@
 extern NSString *const databaseName;
 extern NSString *const selectAllUsersSQL;
 extern NSString *const createTableUserSQL;
+extern NSString *const createTableWorkoutsSQL;
+extern NSString *const createTableLocationsSQL;
 extern NSString *const insertUserSQL;
 
 @end

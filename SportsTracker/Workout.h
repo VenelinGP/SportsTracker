@@ -10,19 +10,20 @@
 
 @interface Workout : NSObject
 
-@property float *distance;
+
+@property float distance;
 @property int duration;
 @property (strong, nonatomic) NSDate *timestamps;
 @property int userId;
 
 
--(instancetype)initDistance: (float *)distance
-                   duration: (int *)duration
+-(instancetype)initDistance: (float)distance
+                   duration: (int)duration
                  timestamps: (NSDate *)timestamps
-                  andUserId: (int *)userId;
+                  andUserId: (int )userId;
 
-+(Workout *)distance: (float *)distance
-            duration: (int *)duration
++(Workout *)distance: (float)distance
+            duration: (int )duration
           timestamps: (NSDate *)timestamps
-           andUserId: (int *)userId;
+           andUserId: (int )userId;
 @end

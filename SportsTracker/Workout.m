@@ -10,27 +10,27 @@
 
 @implementation Workout
 
--(instancetype)initDistance: (float *)distance
-                   duration: (int *)duration
+-(instancetype)initDistance: (float)distance
+                   duration: (int)duration
                  timestamps: (NSDate *)timestamps
-                  andUserId: (int *)userId
+                  andUserId: (int)userId
 
 {
     self = [super init];
     if (self) {
-        self.distance = *(distance);
-        self.duration = *(duration);
+        self.distance = distance;
+        self.duration = duration;
         self.timestamps = timestamps;
-        self.userId=*(userId);
+        self.userId=userId;
     }
     return self;
 }
 
 
-+(Workout *)distance: (float *)distance
-            duration: (int *)duration
++(Workout *)distance: (float)distance
+            duration: (int)duration
           timestamps: (NSDate *)timestamps
-           andUserId: (int *)userId{
+           andUserId: (int)userId{
     return [[Workout alloc] initDistance:distance
                                 duration:duration
                               timestamps:timestamps

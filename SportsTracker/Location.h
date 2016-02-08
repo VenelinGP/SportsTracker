@@ -15,13 +15,13 @@
 @property (strong, nonatomic) NSDate *timestamps;
 @property int userId;
 
--(instancetype)initLatitude: (float *)latitude
-                  longitude: (float *)longitude
+-(instancetype)initLatitude: (float)latitude
+                  longitude: (float)longitude
                  timestamps: (NSDate *)timestamps
-                  andUserId: (int *)userId;
+                  andUserId: (int)userId;
 
-+(Location *)latitude: (float *)latitude
-            longitude: (float *)longitude
++(Location *)latitude: (float)latitude
+            longitude: (float)longitude
            timestamps: (NSDate *)timestamps
-            andUserId: (int *)userId;
+            andUserId: (int)userId;
 @end

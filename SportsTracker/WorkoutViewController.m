@@ -21,7 +21,7 @@
 
 @property (strong, nonatomic) WorkoutSubUIView *workoutSubView;
 @property int seconds;
-@property float distance;
+@property int distance;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSMutableArray *locations;
 @property (nonatomic, strong) NSTimer *timer;
@@ -32,6 +32,7 @@
 
 float currentLat;
 float currentLong;
+float currentDistance;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,6 +60,7 @@ float currentLong;
     [_workoutSubView.buttonStart addTarget:self action:@selector(startLocationUpdates) forControlEvents:UIControlEventTouchUpInside];
     [_workoutSubView.buttonStart addTarget:self action:@selector(startWorkout) forControlEvents:UIControlEventTouchUpInside];
     [_workoutSubView.buttonStop addTarget:self action:@selector(stopWorkout) forControlEvents:UIControlEventTouchUpInside];
+    [_workoutSubView.buttonStop addTarget:self action:@selector(saveWorkout) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -162,11 +164,35 @@ float currentLong;
 -(void)saveWorkout{
     
     Workout *workout = [[Workout alloc]init];
-    
-    workout.distance = (float)[NSNumber numberWithFloat:self.distance];
+    currentDistance = self.distance;
+    workout.distance = currentDistance;
     workout.duration = (int)[NSNumber  numberWithInt:self.seconds];
     workout.timestamps = [NSDate date];
     workout.userId =1;
+    
+    NSMutableArray *locationArray = [NSMutableArray array];
+    Location *locationObject = [[Location alloc]init];
+    for (CLLocation *location in self.locations){
+        locationObject.timestamps = location.timestamp;
+        currentLat = location.coordinate.latitude;
+        currentLong = location.coordinate.latitude;
+        locationObject.latitude = currentLat;
+        locationObject.longitude = currentLong;
+        [locationArray addObject:locationObject];
+    }
+    
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *docsPath = [paths objectAtIndex:0];
+        NSString *path = [docsPath stringByAppendingPathComponent:databaseName];
+        FMDatabase *db = [FMDatabase databaseWithPath:path];
+    
+    if ([db open]) {
+        [db executeUpdate: @"INSERT INTO workouts (distance, duration, timestamps, userId) VALUES (?, ?, ?, ?)",@(workout.distance), @(workout.duration), workout.timestamps, @(workout.userId)];
+    }
+    for (Location *location in locationArray) {
+        [db executeUpdate: @"INSERT INTO locations (latitude, longitude, timestamps, userId) VALUES (?, ?, ?, ?)",@(location.latitude), @(location.longitude), location.timestamps, @(1)];
+    }
+    [db close];
     
 }
 

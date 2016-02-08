@@ -10,27 +10,27 @@
 
 @implementation Location
 
--(instancetype)initLatitude: (float *)latitude
-                   longitude: (float *)longitude
+-(instancetype)initLatitude: (float )latitude
+                   longitude: (float )longitude
                  timestamps: (NSDate *)timestamps
-                  andUserId: (int *)userId
+                  andUserId: (int )userId
 
 {
     self = [super init];
     if (self) {
-        self.latitude = *(latitude);
-        self.longitude = *(longitude);
+        self.latitude = (latitude);
+        self.longitude = (longitude);
         self.timestamps = timestamps;
-        self.userId=*(userId);
+        self.userId=(userId);
     }
     return self;
 }
 
 
-+(Location *)latitude: (float *)latitude
-            longitude: (float *)longitude
++(Location *)latitude: (float )latitude
+            longitude: (float)longitude
           timestamps: (NSDate *)timestamps
-           andUserId: (int *)userId{
+           andUserId: (int)userId{
     return [[Location alloc] initLatitude:latitude
                                 longitude:longitude
                               timestamps:timestamps
