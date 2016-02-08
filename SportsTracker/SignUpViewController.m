@@ -10,6 +10,7 @@
 #import "FMDB.h"
 #import "User.h"
 #import "SQLStrings.h"
+#import "UIView+Toast.h"
 
 @interface SignUpViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *fieldFullname;
@@ -33,7 +34,7 @@
                   address:@""
                   email:self.fieldEmail.text
                   age: -1
-                  andIsLogged: 1];
+                  andIsLogged: 0];
     NSInteger userAge = (NSInteger)user.age;
     NSInteger userIsLogged = (NSInteger) user.isLogged;
     
@@ -63,6 +64,7 @@
                     NSLog(@"error = %@", [db lastErrorMessage]);
                 }
                 else {
+                    //[SignUpView self.view makeToast:@"This is a piece of toast."];
                     NSLog(@"succsess");
                 }
                 [db close];

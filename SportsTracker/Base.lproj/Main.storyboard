@@ -112,6 +112,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="buttonLogin:" destination="sUk-5D-tZU" eventType="touchUpInside" id="A02-eS-Id8"/>
                                     <segue destination="49e-Tb-3d3" kind="show" id="pUM-ai-Wlc"/>
                                 </connections>
                             </button>
@@ -197,10 +198,14 @@
                         </variation>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="fieldPassword" destination="Pxv-UC-qel" id="WEG-bb-vLZ"/>
+                        <outlet property="fieldUsername" destination="Yjd-iS-eVI" id="ght-b2-H6d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmG-Db-kSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="27" y="-977.25"/>
+            <point key="canvasLocation" x="-25.5" y="-1025.25"/>
         </scene>
         <!--Main Sing Up View Controller-->
         <scene sceneID="0oN-rb-vtf">
@@ -414,12 +419,12 @@ keep your training history safe.</string>
         <!--Sign Up View Controller-->
         <scene sceneID="1Qo-mJ-CoT">
             <objects>
-                <viewController id="Fp6-Im-qpj" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="S" id="Fp6-Im-qpj" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k3f-QK-AaR"/>
                         <viewControllerLayoutGuide type="bottom" id="zG6-b3-YfN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="by5-Jx-556">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="SignUpView" id="by5-Jx-556">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -602,7 +607,7 @@ keep your training history safe.</string>
                                 </variation>
                                 <connections>
                                     <action selector="buttonSignIn:" destination="Fp6-Im-qpj" eventType="touchUpInside" id="VAl-Ms-a8y"/>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="qtD-wx-AeG"/>
+                                    <segue destination="sUk-5D-tZU" kind="show" id="oXi-bV-C7h"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJt-bu-t4e">
@@ -1090,10 +1095,10 @@ keep your training history safe.</string>
                                 <exclude reference="hzH-vQ-icP"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="yng-3F-LBA"/>
                                 <exclude reference="82d-Kz-BKi"/>
                                 <exclude reference="8bh-Rh-XDg"/>
                                 <exclude reference="nYi-Gu-ows"/>
-                                <exclude reference="yng-3F-LBA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1101,10 +1106,10 @@ keep your training history safe.</string>
                                 <include reference="hzH-vQ-icP"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="yng-3F-LBA"/>
                                 <include reference="82d-Kz-BKi"/>
                                 <include reference="8bh-Rh-XDg"/>
                                 <include reference="nYi-Gu-ows"/>
-                                <include reference="yng-3F-LBA"/>
                             </mask>
                         </variation>
                     </view>
@@ -1242,6 +1247,6 @@ keep your training history safe.</string>
         <image name="profile-rabbit-toy.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qtD-wx-AeG"/>
+        <segue reference="gur-A4-L5z"/>
     </inferredMetricsTieBreakers>
 </document>
