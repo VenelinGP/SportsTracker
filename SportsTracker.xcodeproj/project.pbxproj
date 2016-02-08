@@ -13,6 +13,9 @@
 		7FA45D8E1C64E593009106BC /* amazing_running.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45D8D1C64E593009106BC /* amazing_running.jpg */; };
 		7FA45D921C64E744009106BC /* Country_Road_tall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45D911C64E744009106BC /* Country_Road_tall.jpg */; };
 		7FADF0C61C67F95400FC7E86 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FADF0C51C67F95400FC7E86 /* Calculations.swift */; };
+		7FADF0CD1C68251000FC7E86 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FADF0CC1C68251000FC7E86 /* UIView+Toast.m */; };
+		7FADF0D01C6839A600FC7E86 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FADF0CF1C6839A600FC7E86 /* Workout.m */; };
+		7FADF0D31C6839C700FC7E86 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FADF0D21C6839C700FC7E86 /* Location.m */; };
 		7FB0571E1C657800004B0008 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0571D1C657800004B0008 /* SignUpViewController.m */; };
 		7FB057211C657818004B0008 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057201C657818004B0008 /* LoginViewController.m */; };
 		7FB057251C6578AC004B0008 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB057241C6578AC004B0008 /* User.m */; };
@@ -41,6 +44,12 @@
 		7FA45D911C64E744009106BC /* Country_Road_tall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Country_Road_tall.jpg; sourceTree = "<group>"; };
 		7FADF0C41C67F95300FC7E86 /* SportsTracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportsTracker-Bridging-Header.h"; sourceTree = "<group>"; };
 		7FADF0C51C67F95400FC7E86 /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
+		7FADF0CB1C68251000FC7E86 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		7FADF0CC1C68251000FC7E86 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		7FADF0CE1C6839A600FC7E86 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
+		7FADF0CF1C6839A600FC7E86 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
+		7FADF0D11C6839C700FC7E86 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		7FADF0D21C6839C700FC7E86 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		7FB0571C1C657800004B0008 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		7FB0571D1C657800004B0008 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		7FB0571F1C657818004B0008 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -134,11 +143,24 @@
 			name = SwiftFiles;
 			sourceTree = "<group>";
 		};
+		7FADF0CA1C68247600FC7E86 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				7FADF0CB1C68251000FC7E86 /* UIView+Toast.h */,
+				7FADF0CC1C68251000FC7E86 /* UIView+Toast.m */,
+			);
+			name = Toast;
+			sourceTree = "<group>";
+		};
 		7FB057221C657887004B0008 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				7FB057231C6578AC004B0008 /* User.h */,
 				7FB057241C6578AC004B0008 /* User.m */,
+				7FADF0CE1C6839A600FC7E86 /* Workout.h */,
+				7FADF0CF1C6839A600FC7E86 /* Workout.m */,
+				7FADF0D11C6839C700FC7E86 /* Location.h */,
+				7FADF0D21C6839C700FC7E86 /* Location.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -182,6 +204,7 @@
 		7FB1BD041C6258B800D63762 /* SportsTracker */ = {
 			isa = PBXGroup;
 			children = (
+				7FADF0CA1C68247600FC7E86 /* Toast */,
 				7FADF0C71C680BC500FC7E86 /* SwiftFiles */,
 				7FB0572D1C66A70B004B0008 /* GPSProvider */,
 				7FB057261C662B90004B0008 /* Constants */,
@@ -265,6 +288,11 @@
 				TargetAttributes = {
 					7FB1BD011C6258B800D63762 = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -358,12 +386,15 @@
 			files = (
 				7FB057291C662BAE004B0008 /* SQLStrings.m in Sources */,
 				7FB1BD251C6266D100D63762 /* ExploreViewController.m in Sources */,
+				7FADF0D01C6839A600FC7E86 /* Workout.m in Sources */,
 				7FB1BD101C6258B800D63762 /* DiaryViewController.m in Sources */,
+				7FADF0D31C6839C700FC7E86 /* Location.m in Sources */,
 				7FB057431C6765A8004B0008 /* WorkoutSubUIView.m in Sources */,
 				7FB1BD0A1C6258B800D63762 /* AppDelegate.m in Sources */,
 				7FB1BD281C626A4600D63762 /* SettingsViewController.m in Sources */,
 				7FB1BD0D1C6258B800D63762 /* HomeViewController.m in Sources */,
 				7FB057211C657818004B0008 /* LoginViewController.m in Sources */,
+				7FADF0CD1C68251000FC7E86 /* UIView+Toast.m in Sources */,
 				7FB057251C6578AC004B0008 /* User.m in Sources */,
 				7FB057381C675FFD004B0008 /* WorkoutViewController.m in Sources */,
 				7FB1BD071C6258B800D63762 /* main.m in Sources */,
@@ -482,6 +513,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SportsTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.netcoms.SportsTracker;
@@ -497,6 +530,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SportsTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.netcoms.SportsTracker;

@@ -10,9 +10,6 @@
 
 @implementation User
 
-int *_age;
-int *_isLogged;
-
 -(instancetype)initName: (NSString *)username
                password: (NSString *)password
                fullName: (NSString *)fullname
@@ -35,7 +32,7 @@ int *_isLogged;
     }
     return self;
 }
-;
+
 
 +(User*)userName: (NSString *)username
         password: (NSString *)password
@@ -53,6 +50,6 @@ int *_isLogged;
                             email:email
                               age:age
                       andIsLogged:isLogged];
-};
+}
 
 @end

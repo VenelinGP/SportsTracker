@@ -10,25 +10,34 @@
 #import "WorkoutSubUIView.h"
 #import "Coordinates.h"
 #import "GoogleMaps/GoogleMaps.h"
-
+#import "Location.h"
+#import "Workout.h"
+#import "SportsTracker-Swift.h"
+#import "User.h"
+#import "FMDB.h"
+#import "SQLStrings.h"
 
 @interface WorkoutViewController ()<CLLocationManagerDelegate, GMSMapViewDelegate>
 
 @property (strong, nonatomic) WorkoutSubUIView *workoutSubView;
+@property int seconds;
+@property float distance;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSMutableArray *locations;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
 @implementation WorkoutViewController
 
-CLLocationManager *locationManager;
 float currentLat;
 float currentLong;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSDateFormatter *f = [[NSDateFormatter alloc] init];
-    [f setDateFormat:@"dd.MMM.YYYY   hh:mm"];
+    NSDateFormatter *currentData = [[NSDateFormatter alloc] init];
+    [currentData setDateFormat:@"dd.MMM.YYYY   hh:mm"];
     
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: defaultLat
                                                             longitude: defaultLong
@@ -41,23 +50,26 @@ float currentLong;
                                                                owner:self
                                                              options:nil]
                                  objectAtIndex:0];
+    
     [self.view addSubview:_workoutSubView];
     
-    self.workoutSubView.labelDate.text = [NSString stringWithFormat:@"%@", [f stringFromDate:[NSDate date]]];
-    [_workoutSubView.buttonStart addTarget:self action:@selector(startLocationManager) forControlEvents:UIControlEventTouchUpInside];
-    //self.workoutSubView.buttonStart.hidden = NO;
+    self.workoutSubView.labelDate.text = [NSString stringWithFormat:@"%@", [currentData stringFromDate:[NSDate date]]];
     self.workoutSubView.buttonStop.hidden = YES;
-
+    
+    [_workoutSubView.buttonStart addTarget:self action:@selector(startLocationUpdates) forControlEvents:UIControlEventTouchUpInside];
     [_workoutSubView.buttonStart addTarget:self action:@selector(startWorkout) forControlEvents:UIControlEventTouchUpInside];
     [_workoutSubView.buttonStop addTarget:self action:@selector(stopWorkout) forControlEvents:UIControlEventTouchUpInside];
-
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
             [super viewWillAppear:animated];
             [self.mapContainerView addObserver:self forKeyPath:@"myLocation" options:0 context:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.timer invalidate];
 }
 
 - (void)dealloc {
@@ -78,45 +90,38 @@ float currentLong;
     }
 }
 
+- (void)eachSecond
+{
+    Calculations *calc =[[Calculations alloc]init];
+
+    self.seconds++;
+    self.workoutSubView.labelDuration.text = [NSString stringWithFormat: @"%@", [calc stringifySecondCountWithSeconds:self.seconds andLongFormat:NO]];
+    self.workoutSubView.labelDistance.text = [NSString stringWithFormat: @"%@", [calc stringifyDistanceInMeters:self.distance]];
+    self.workoutSubView.labelAvgSpeed.text = [NSString stringWithFormat:@"%@",  [calc stringifyAvgSpeedInMeters:self.distance andSeconds:self.seconds]];
+}
 -(void)startWorkout{
     self.workoutSubView.buttonStart.hidden = YES;
     self.workoutSubView.buttonStop.hidden = NO;
-    self.workoutSubView.labelDuration.text = @"00:00:00";
+    self.workoutSubView.labelDuration.text = @"00:00";
     self.workoutSubView.labelDistance.text = @"0.00 km";
     self.workoutSubView.labelMaxSpeed.text = @"0.00 km/h";
-    self.workoutSubView.labelAvgSpeed.text = @"0.00 km/h";
+    self.workoutSubView.labelAvgSpeed.text = @"0.00 m/s";
+    self.seconds = 0;
+    self.distance = 0;
+    self.locations = [NSMutableArray array];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0) target:self selector:@selector(eachSecond) userInfo:nil repeats:YES];
+    [self startLocationUpdates];
 }
 
 -(void)stopWorkout{
     self.workoutSubView.buttonStart.hidden = NO;
     self.workoutSubView.buttonStop.hidden = YES;
-    self.workoutSubView.labelDuration.text = @"10:00:00";
-    self.workoutSubView.labelDistance.text = @"1.00 km";
-    self.workoutSubView.labelMaxSpeed.text = @"1.00 km/h";
-    self.workoutSubView.labelAvgSpeed.text = @"1.00 km/h";
-    [locationManager stopUpdatingLocation];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
--(void) startLocationManager{
-
-    if([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied) {
-        NSLog(@"Enabled");
-    } else {
-        NSLog(@"Not Enabled");
-    }
-    
-    locationManager = [[CLLocationManager alloc]init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.delegate = self;
-    [locationManager requestAlwaysAuthorization];
-    [locationManager startUpdatingLocation];
-
+    self.workoutSubView.labelMaxSpeed.text = @"0.00 km/h";
+    NSDateFormatter *currentData = [[NSDateFormatter alloc] init];
+    [currentData setDateFormat:@"dd.MMM.YYYY   hh:mm"];
+    self.workoutSubView.labelDate.text = [NSString stringWithFormat:@"%@", [currentData stringFromDate:[NSDate date]]];
+    [self.timer invalidate];
+    [_locationManager stopUpdatingLocation];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray*)locations{
@@ -125,19 +130,49 @@ float currentLong;
     currentLat = location.coordinate.latitude;
     currentLong = location.coordinate.longitude;
     
-    NSLog(@"Longtitude: %.2f | Latitude: %.2f", currentLong, currentLat);    
-    //[locationManager stopUpdatingLocation];
+    NSLog(@"Longtitude: %.2f | Latitude: %.2f", currentLong, currentLat);
+    for (CLLocation *newLocation in locations) {
+        if (newLocation.horizontalAccuracy < 20) {
+            
+            // update distance
+            if (self.locations.count > 0) {
+                self.distance += [newLocation distanceFromLocation:self.locations.lastObject];
+            }
+            
+            [self.locations addObject:newLocation];
+        }
+    }
+
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)startLocationUpdates
+{
+    if (self.locationManager == nil) {
+        self.locationManager = [[CLLocationManager alloc] init];
+    }
+    
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.activityType = CLActivityTypeFitness;
+    
+    self.locationManager.distanceFilter = 10; // meters
+    [self.locationManager startUpdatingLocation];
 }
-*/
+
+-(void)saveWorkout{
+    
+    Workout *workout = [[Workout alloc]init];
+    
+    workout.distance = (float)[NSNumber numberWithFloat:self.distance];
+    workout.duration = (int)[NSNumber  numberWithInt:self.seconds];
+    workout.timestamps = [NSDate date];
+    workout.userId =1;
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

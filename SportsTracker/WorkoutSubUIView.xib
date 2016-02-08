@@ -33,7 +33,7 @@
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uH-93-qLp">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uH-93-qLp">
                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="51" id="IIC-Kv-xvV"/>
@@ -165,7 +165,7 @@
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpc-Cw-Evq">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 m/s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpc-Cw-Evq">
                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="163" id="0Cy-fI-bVK"/>
@@ -184,52 +184,6 @@
                         <mask key="constraints">
                             <include reference="0Cy-fI-bVK"/>
                             <include reference="lLw-IS-WHX"/>
-                        </mask>
-                    </variation>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyY-AO-T3C">
-                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="42" id="EK4-I4-x8T"/>
-                        <constraint firstAttribute="width" constant="337" id="Kpq-dL-ltK"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <state key="normal" title="START">
-                        <color key="titleColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="EK4-I4-x8T"/>
-                            <exclude reference="Kpq-dL-ltK"/>
-                        </mask>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=compact">
-                        <mask key="constraints">
-                            <include reference="EK4-I4-x8T"/>
-                            <include reference="Kpq-dL-ltK"/>
-                        </mask>
-                    </variation>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pH-MP-HCM">
-                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="33" id="EHc-8X-MFc"/>
-                        <constraint firstAttribute="width" constant="337" id="g9h-ST-C08"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <color key="textColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="EHc-8X-MFc"/>
-                            <exclude reference="g9h-ST-C08"/>
-                        </mask>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=compact">
-                        <mask key="constraints">
-                            <include reference="EHc-8X-MFc"/>
-                            <include reference="g9h-ST-C08"/>
                         </mask>
                     </variation>
                 </label>
@@ -257,6 +211,52 @@
                         </mask>
                     </variation>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyY-AO-T3C">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="EK4-I4-x8T"/>
+                        <constraint firstAttribute="width" constant="337" id="Kpq-dL-ltK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="START">
+                        <color key="titleColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="EK4-I4-x8T"/>
+                            <exclude reference="Kpq-dL-ltK"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="EK4-I4-x8T"/>
+                            <include reference="Kpq-dL-ltK"/>
+                        </mask>
+                    </variation>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pH-MP-HCM">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="EHc-8X-MFc"/>
+                        <constraint firstAttribute="width" constant="337" id="g9h-ST-C08"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" red="1" green="0.99196012590000004" blue="0.97125447720000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="EHc-8X-MFc"/>
+                            <exclude reference="g9h-ST-C08"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="EHc-8X-MFc"/>
+                            <include reference="g9h-ST-C08"/>
+                        </mask>
+                    </variation>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
@@ -304,9 +304,9 @@
                     <exclude reference="ZBu-NR-URm"/>
                     <exclude reference="9hC-yW-AJz"/>
                     <exclude reference="Rpc-Cw-Evq"/>
+                    <exclude reference="off-DF-ke2"/>
                     <exclude reference="hyY-AO-T3C"/>
                     <exclude reference="5pH-MP-HCM"/>
-                    <exclude reference="off-DF-ke2"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="8aZ-FH-3cl"/>
@@ -343,9 +343,9 @@
                     <include reference="ZBu-NR-URm"/>
                     <include reference="9hC-yW-AJz"/>
                     <include reference="Rpc-Cw-Evq"/>
+                    <include reference="off-DF-ke2"/>
                     <include reference="hyY-AO-T3C"/>
                     <include reference="5pH-MP-HCM"/>
-                    <include reference="off-DF-ke2"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="8aZ-FH-3cl"/>
